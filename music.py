@@ -51,6 +51,10 @@ class music(commands.Cog):
         ctx.voice_client.stop()
         torSongTitle.clear()
         await ctx.voice_client.disconnect()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
         print("\nDISCONNECTED")   
     # Skip Command
     @commands.command()
@@ -66,7 +70,10 @@ class music(commands.Cog):
         await is_on_channel(ctx)
         print("\nSKIPPED\n")
         ctx.voice_client.stop()
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
     # Stop Command
     @commands.command()
     async def stop(self,ctx):
@@ -82,7 +89,10 @@ class music(commands.Cog):
         torSongTitle.clear()
         ctx.voice_client.stop()
         print("\nSTOPED")
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
     # Pause Command
     @commands.command()
     async def pause(self,ctx):
@@ -97,7 +107,10 @@ class music(commands.Cog):
         await is_on_channel(ctx)
         ctx.voice_client.pause()
         print("\nPAUSED")
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
     # Resume Command
     @commands.command()
     async def resume(self,ctx):
@@ -112,7 +125,10 @@ class music(commands.Cog):
         await is_on_channel(ctx)
         ctx.voice_client.resume()
         print("\nRESUMED")
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
         
 # Is author on channel function
 async def is_on_channel(ctx):
@@ -211,7 +227,10 @@ async def send_embed_playlist(ctx):
     if embedUpdate == any:
         pass
     else:
-        await embedUpdate.delete()
+        try:
+            await embedUpdate.delete()
+        except:
+            pass
     if not torSongTitle:
         playlistEmbed = discord.Embed(title="No Songs",description = "",color=0xFF0000)
     else:
