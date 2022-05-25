@@ -39,6 +39,7 @@ class music(commands.Cog):
     # Disconnect Command
     @commands.command()
     async def disconnect(self,ctx):
+        global is_playing
         channelName = ctx.message.channel.name
         if channelName != "🎵tor-command":
             await ctx.send("Send that command to 🎵tor-command channel")
@@ -78,6 +79,7 @@ class music(commands.Cog):
     # Stop Command
     @commands.command()
     async def stop(self,ctx):
+        global is_playing
         channelName = ctx.message.channel.name
         if channelName != "🎵tor-command":
             await ctx.send("Send that command to 🎵tor-command channel")
