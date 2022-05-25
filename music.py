@@ -50,7 +50,7 @@ class music(commands.Cog):
         await is_on_channel(ctx)
         ctx.voice_client.stop()
         torSongTitle.clear()
-        ctx.voice_client.disconnect()
+        await ctx.voice_client.disconnect()
         print("\nDISCONNECTED")   
     # Skip Command
     @commands.command()
