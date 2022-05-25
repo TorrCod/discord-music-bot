@@ -55,6 +55,7 @@ class music(commands.Cog):
             await ctx.message.delete()
         except:
             pass
+        is_playing = False
         print("\nDISCONNECTED")   
     # Skip Command
     @commands.command()
@@ -93,6 +94,7 @@ class music(commands.Cog):
             await ctx.message.delete()
         except:
             pass
+        is_playing = False
     # Pause Command
     @commands.command()
     async def pause(self,ctx):
