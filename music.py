@@ -232,7 +232,7 @@ async def send_embed_playlist(ctx):
         except:
             pass
     if not torSongTitle:
-        playlistEmbed = discord.Embed(title="No Songs",description = "",color=0xFF0000)
+        playlistEmbed = discord.Embed(title="NO CURRENTLY PLAYING SONGS RIGHT NOW",description = "",color=0xFF0000)
     else:
         playlistEmbed = discord.Embed(title="Playing Now \n"+torSongTitle[0]['title'],description = "Requested by: " + torSongTitle[0]['author'],color=0x00ff00)
         if len(torSongTitle) > 1:
