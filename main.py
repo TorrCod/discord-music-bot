@@ -1,4 +1,5 @@
 # Import Discord Package
+import asyncio
 import discord, music, time, _privVariables ,tor_command
 from discord.ext import commands
 
@@ -29,7 +30,7 @@ for i in range(len(cogs)):
 @client.command(name='helpme')
 async def helpme(ctx):
     await ctx.send("Tulong Amp! kalma ka wait ..")
-    time.sleep(2)
+    await asyncio.sleep(2)
     await ctx.send("\nETO COMMAND KO "+
                     "\ntorplay 'paste URL right here' - patutog ng music"+ 
                     "\ntorpause - pause yung music"+
